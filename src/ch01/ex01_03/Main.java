@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         if (args.length < 2) {
             System.out.println("usage: <directory> <extension>");
             System.exit(1);
