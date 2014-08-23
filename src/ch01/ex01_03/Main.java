@@ -22,7 +22,7 @@ public class Main {
             else
                 return name.substring(index + 1).equals(targetExt);
         });
-        Arrays.stream(files).forEach(f -> System.out.println(f));
+        Arrays.stream(files).forEach(System.out::println);
     }
 
 }

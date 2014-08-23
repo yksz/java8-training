@@ -12,7 +12,7 @@ public class Main {
             System.out.println("Arrays.sort-Thread ID: " + Thread.currentThread().getId());
             return Integer.compare(first.length(), second.length());
         });
-        Arrays.stream(strs).forEach(s -> System.out.println(s));
+        Arrays.stream(strs).forEach(System.out::println);
     }
 
 }

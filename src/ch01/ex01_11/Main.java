@@ -37,13 +37,13 @@ interface J {
 }
 
 class Impl1 implements I, J {
-    // Impl1 is not abstract and does not override abstract method f1() in I
+    // [Error] The type Impl1 must implement the inherited abstract method J.f1()
     public void f1() { System.out.println("Impl1"); }
-    // The default method f2() inherited from Main.I conflicts with another method inherited from Main.J
+    // [Error] The default method f2() inherited from I conflicts with another method inherited from J
     public void f2() { System.out.println("Impl1"); }
-    // Impl1 is not abstract and does not override abstract method f3() in I
+    // [Error] The type Impl1 must implement the inherited abstract method J.f3()
     public void f3() { System.out.println("Impl1"); }
-    // Duplicate default methods named f4 with the parameters () and () are inherited from the types Main.J and Main.I
+    // [Error] Duplicate default methods named f4 with the parameters () and () are inherited from the types J and I
     public void f4() { System.out.println("Impl1"); }
 }
 

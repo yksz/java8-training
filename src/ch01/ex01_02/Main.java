@@ -11,7 +11,7 @@ public class Main {
             targetDir = new File(args[0]);
 
         File[] dirs = targetDir.listFiles(file -> file.isDirectory());
-        Arrays.stream(dirs).forEach(f -> System.out.println(f));
+        Arrays.stream(dirs).forEach(System.out::println);
     }
 
 }
