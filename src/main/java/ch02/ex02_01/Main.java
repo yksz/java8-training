@@ -38,7 +38,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         String contents = "Dynamic Host Configuration Protocol";
-        List<String> words = Arrays.asList(contents.split(" "));
+        List<String> words = Arrays.asList(contents.split("[^\\p{L}]+"));
         System.out.println(count(words, 12));
     }
 
