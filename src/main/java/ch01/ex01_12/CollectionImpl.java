@@ -2,7 +2,6 @@ package ch01.ex01_12;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.stream.Stream;
 
 public class CollectionImpl<E> implements Collection<E> {
 
