@@ -1,6 +1,14 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'application'
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.12'
+}
+
+run {
+    if (!project.hasProperty('main'))
+        throw new GradleException('usage: gradle run -Pmain="<main class>"')
+    main = "${project.main}"
+    classpath = sourceSets.main.runtimeClasspath
 }
