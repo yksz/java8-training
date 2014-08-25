@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class CollectionImpl<E> implements Collection<E> {
 
-    void stream() {}
+    //void stream() {}
 
     @Override
     public int size() {
