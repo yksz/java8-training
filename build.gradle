@@ -7,8 +7,10 @@ task wrapper(type: Wrapper) {
 }
 
 run {
-    if (!project.hasProperty('main'))
-        throw new GradleException('usage: gradle run -Pmain="<main class>"')
-    main = "${project.main}"
+    // usage: gradle run -Pmain="<main class>" -Pargs="<args>"
+    if (project.hasProperty('main'))
+        main = "${project.main}"
+    if (project.hasProperty('args'))
+        args = project.args.split(/\s+/) as List
     classpath = sourceSets.main.runtimeClasspath
 }
