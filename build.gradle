@@ -6,6 +6,8 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.12'
 }
 
+compileJava.options.encoding = 'UTF-8'
+
 run {
     // usage: gradle run -Pmain="<main class>" -Pargs="<args>"
     if (project.hasProperty('main'))
