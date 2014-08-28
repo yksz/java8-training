@@ -20,6 +20,7 @@ import java.util.SortedSet;
 public class Collections {
 
     // Collection, default
+    @SuppressWarnings("unchecked")
     static <T> boolean addAll(Collection<? super T> c, T... elements) {
         return false;
     }
