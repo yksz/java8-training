@@ -32,7 +32,7 @@ public class Main {
                 acc.addAll(val);
             }
             return acc;
-        }, (val1, val2) -> val1);
+        }, (obj1, obj2) -> obj1);
     }
 
     static List<ArrayList<Integer>> newList() {
