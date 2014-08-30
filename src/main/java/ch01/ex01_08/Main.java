@@ -12,7 +12,7 @@ public class Main {
         List<Runnable> runners1 = new ArrayList<>();
         for (String name : names)
             runners1.add(() -> System.out.println(name));
-        runners1.forEach( runner -> runner.run());
+        runners1.forEach(runner -> runner.run());
 
         System.out.println(">> runners2");
         List<Runnable> runners2 = new ArrayList<>();
@@ -20,7 +20,7 @@ public class Main {
             String name = names[i];
             runners2.add(() -> System.out.println(name));
         }
-        runners2.forEach( runner -> runner.run());
+        runners2.forEach(runner -> runner.run());
     }
 
 }
