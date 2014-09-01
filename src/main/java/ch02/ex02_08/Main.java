@@ -15,7 +15,6 @@ public class Main {
     }
 
     static class ZipIterator<T> implements Iterator<T> {
-
         private final Iterator<T> first;
         private final Iterator<T> second;
         private boolean isFirstsTurn = true;
@@ -40,13 +39,12 @@ public class Main {
                 return second.next();
             }
         }
-
     }
 
     public static void main(String[] args) {
         Stream<Integer> s1 = Stream.of(1, 2, 3);
         Stream<Integer> s2 = Stream.of(4, 5, 6);
-        zip(s1, s2).forEach(System.out::println);
+        zip(s1, s2).forEach(System.out::println); // => 1 4 2 5 3
     }
 
 }
