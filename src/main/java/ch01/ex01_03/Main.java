@@ -1,17 +1,20 @@
 package ch01.ex01_03;
 
 import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) {
-        if (args.length < 2) {
-            System.out.println("usage: <directory> <extension>");
-            System.exit(1);
-        }
-        File targetDir = new File(args[0]);
-        String targetExt = args[1]; // エンクロージングスコープからキャプチャされる変数
+    static URL getResource(String resource) {
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        return classLoader.getResource(resource);
+    }
+
+    public static void main(String[] args) throws URISyntaxException {
+        File targetDir = new File(getResource("ch01/dir").toURI());
+        String targetExt = "txt"; // エンクロージングスコープからキャプチャされる変数
 
         String[] files = targetDir.list((dir, name) -> {
             if (new File(name).isDirectory())
@@ -22,7 +25,9 @@ public class Main {
             else
                 return name.substring(index + 1).equals(targetExt);
         });
-        Arrays.stream(files).forEach(System.out::println);
+
+        String[] expected = new String[] { "a.txt" };
+        assert Arrays.equals(expected, files);
     }
 
 }

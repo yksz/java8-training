@@ -1,14 +1,19 @@
 package ch01.ex01_04;
 
 import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Arrays;
 
 public class Main {
 
-    public static void main(String[] args) {
-        File targetDir = new File(".");
-        if (args.length > 0)
-            targetDir = new File(args[0]);
+    static URL getResource(String resource) {
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        return classLoader.getResource(resource);
+    }
+
+    public static void main(String[] args) throws URISyntaxException {
+        File targetDir = new File(getResource("ch01/dir").toURI());
 
         File[] files = targetDir.listFiles();
         Arrays.sort(files, (first, second) -> {
@@ -19,7 +24,9 @@ public class Main {
            else
                return 0;
         });
-        Arrays.stream(files).forEach(System.out::println);
+
+        String[] expected = new String[] { "dir", "a.txt" };
+        assert Arrays.equals(expected, Arrays.stream(files).map(File::getName).toArray());
     }
 
 }
