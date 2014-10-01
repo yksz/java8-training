@@ -1,5 +1,6 @@
 package ch02.ex02_08;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Spliterator;
 import java.util.Spliterators;
@@ -44,7 +45,8 @@ public class Main {
     public static void main(String[] args) {
         Stream<Integer> s1 = Stream.of(1, 2, 3);
         Stream<Integer> s2 = Stream.of(4, 5, 6);
-        zip(s1, s2).forEach(System.out::println); // => 1 4 2 5 3
+        Integer[] expected = new Integer[] { 1, 4, 2, 5, 3 };
+        assert Arrays.equals(expected, zip(s1, s2).toArray());
     }
 
 }

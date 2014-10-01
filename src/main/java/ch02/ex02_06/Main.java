@@ -1,5 +1,6 @@
 package ch02.ex02_06;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -10,7 +11,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        characterStream("Hello World!").forEach(System.out::println);
+        Character[] expected = new Character[] { 'H', 'e', 'l', 'l', 'o' };
+        assert Arrays.equals(expected, characterStream("Hello").toArray());
     }
 
 }

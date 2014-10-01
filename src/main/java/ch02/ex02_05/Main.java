@@ -1,5 +1,6 @@
 package ch02.ex02_05;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public class Main {
@@ -12,7 +13,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        randomStream(0).limit(5).forEach(System.out::println);
+        Long[] expected = new Long[] { 0L, 11L, 277363943098L, 11718085204285L };
+        assert Arrays.equals(expected, randomStream(0).limit(4).toArray());
     }
 
 }

@@ -9,6 +9,8 @@ task wrapper(type: Wrapper) {
 compileJava.options.encoding = 'UTF-8'
 
 run {
+    enableAssertions = true
+
     // usage: gradle run -Pmain="<main class>" -Pargs="<args>"
     if (project.hasProperty('main'))
         main = "${project.main}"
