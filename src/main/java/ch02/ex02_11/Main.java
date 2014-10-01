@@ -1,6 +1,9 @@
 package ch02.ex02_11;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -30,7 +33,11 @@ public class Main {
 
     public static void main(String[] args) {
         Stream<Integer> s = IntStream.range(1, 10).boxed().parallel();
-        inject(s, 9).forEach(System.out::println);
+        List<Integer> result = inject(s, 9);
+
+        Integer[] expected = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        Collections.sort(result);
+        assert Arrays.equals(expected, result.toArray());
     }
 
 }

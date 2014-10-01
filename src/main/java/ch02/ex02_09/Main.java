@@ -2,6 +2,7 @@ package ch02.ex02_09;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -44,21 +45,14 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println(">> inject1");
-        inject1(newList().stream()).stream().forEach(n -> System.out.print(n + " "));
-        System.out.println();
+        Integer[] expected = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        assert Arrays.equals(expected, inject1(newList().stream()).toArray());
+        assert Arrays.equals(expected, inject2(newList().stream()).toArray());
+        assert Arrays.equals(expected, inject3(newList().stream()).toArray());
 
-        System.out.println(">> inject2");
-        inject2(newList().stream()).stream().forEach(n -> System.out.print(n + " "));
-        System.out.println();
-
-        System.out.println(">> inject3");
-        inject3(newList().stream()).stream().forEach(n -> System.out.print(n + " "));
-        System.out.println();
-
-        System.out.println(">> inject3 parallel");
-        inject3(newList().parallelStream()).stream().forEach(n -> System.out.print(n + " "));
-        System.out.println();
+        List<Integer> result = inject3(newList().parallelStream());
+        Collections.sort(result);
+        assert Arrays.equals(expected, result.toArray());
     }
 
 }
