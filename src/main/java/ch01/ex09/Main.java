@@ -12,9 +12,9 @@ public class Main {
         list.add("foo");
         list.add("bar");
 
-        List<String> result = new ArrayList<>();
-        list.forEachIf((s) -> result.add(s), (str -> str.equals("foo")));
-        assert Arrays.equals(new String[] { "foo" }, result.toArray());
+        List<String> out = new ArrayList<>();
+        list.forEachIf((s) -> out.add(s), (s -> s.equals("foo")));
+        assert Arrays.equals(new String[] { "foo" }, out.toArray());
     }
 
 }

@@ -12,12 +12,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        List<String> result = new ArrayList<>();
-        andThen((() -> result.add("first")),
-                (() -> result.add("second")))
+        List<String> out = new ArrayList<>();
+        andThen((() -> out.add("first")),
+                (() -> out.add("second")))
                 .run();
         String[] expected = new String[] { "first", "second" };
-        assert Arrays.equals(expected, result.toArray());
+        assert Arrays.equals(expected, out.toArray());
     }
 
 }
