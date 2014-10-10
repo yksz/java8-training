@@ -21,6 +21,8 @@ class ReentrantLocksSpec extends Specification {
 
         then:
         wasLocked == true
+
+        and:
         lock.isLocked() == false
     }
 
@@ -32,7 +34,9 @@ class ReentrantLocksSpec extends Specification {
         ReentrantLocks.withLock(lock, { throw new Exception() } )
 
         then:
-        thrown(Exception)
+        thrown Exception
+
+        and:
         lock.isLocked() == false
     }
 
