@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         URI uri = getResource("ch02/alice.txt").toURI();
         String contents = new String(Files.readAllBytes(Paths.get(uri)), StandardCharsets.UTF_8);
-        String[] wordArray = contents.split("[^\\p{L}]+");
+        String[] wordArray = contents.split("[\\P{L}]+");
         Stream<String> words = Stream.of(wordArray).parallel();
 
         Map<Integer, Long> countByLength = words.parallel()

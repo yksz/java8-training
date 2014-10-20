@@ -18,7 +18,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         URI uri = getResource("ch02/alice.txt").toURI();
         String contents = new String(Files.readAllBytes(Paths.get(uri)), StandardCharsets.UTF_8);
-        List<String> words = Arrays.asList(contents.split("[^\\p{L}]+"));
+        List<String> words = Arrays.asList(contents.split("[\\P{L}]+"));
 
         long begin1 = System.nanoTime();
         long count1 = words.stream().filter(w -> w.length() > 12).count();
