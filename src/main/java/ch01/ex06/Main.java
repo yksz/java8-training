@@ -5,23 +5,23 @@ import java.util.concurrent.Callable;
 public class Main {
 
     public static Runnable uncheck(RunnableEx runner) {
-        return (() -> {
+        return () -> {
             try {
                 runner.run();
-            } catch (Throwable e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
-        });
+        };
     }
 
     public static Runnable uncheckByCallable(Callable<Void> callable) {
-        return (() -> {
+        return () -> {
             try {
                 callable.call();
             } catch (Exception e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
-        });
+        };
     }
 
     public static void main(String[] args) {
