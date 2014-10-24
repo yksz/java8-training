@@ -193,7 +193,7 @@ public class Collections {
         return null;
     }
 
-    // Object, default
+    // List, default
     static <T> List<T> nCopies(int n, T o) {
         return null;
     }
@@ -234,17 +234,17 @@ public class Collections {
     static void shuffle(List<?> list, Random rnd) {
     }
 
-    // Object, default
+    // Set, default
     static <T> Set<T> singleton(T o) {
         return null;
     }
 
-    // Object, default
+    // List, default
     static <T> List<T> singletonList(T o) {
         return null;
     }
 
-    // Object, default
+    // Map, default
     static <K, V> Map<K, V> singletonMap(K key, V value) {
         return null;
     }
