@@ -7,15 +7,18 @@ import java.util.List;
 public class Main {
 
     public static Runnable andThen(Runnable r1, Runnable r2) {
-        r1.run();
-        return r2;
+        return () -> {
+            r1.run();
+            r2.run();
+        };
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         List<String> out = new ArrayList<>();
-        andThen((() -> out.add("first")),
-                (() -> out.add("second")))
-                .run();
+        Thread th = new Thread(andThen(() -> out.add("first"),
+                                       () -> out.add("second")));
+        th.start();
+        th.join();
         String[] expected = new String[] { "first", "second" };
         assert Arrays.equals(expected, out.toArray());
     }
