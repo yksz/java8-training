@@ -13,7 +13,7 @@ public class Main {
         list.add("bar");
 
         List<String> out = new ArrayList<>();
-        list.forEachIf((s) -> out.add(s), (s -> s.equals("foo")));
+        list.forEachIf(s -> out.add(s), s -> s.equals("foo"));
         assert Arrays.equals(new String[] { "foo" }, out.toArray());
     }
 
