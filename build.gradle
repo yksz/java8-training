@@ -8,8 +8,9 @@ repositories {
 }
 
 dependencies {
+    testCompile 'junit:junit:4.+'
     // mandatory dependencies for using Spock
-    compile 'org.codehaus.groovy:groovy-all:2.3.7'
+    testCompile 'org.codehaus.groovy:groovy-all:2.3.7'
     testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
 }
 
