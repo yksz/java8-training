@@ -15,8 +15,8 @@ public class ComparatorUtils {
         boolean isWhitespaceExclusion = condition.contains(Condition.WHITESPACE_EXCLUSION);
         return (str1, str2) -> {
             if (isWhitespaceExclusion) {
-                str1 = str1.trim();
-                str2 = str2.trim();
+                str1 = str1.replaceAll("\\s", "");
+                str2 = str2.replaceAll("\\s", "");
             }
             int order = 1;
             if (isReverseOrder) {
