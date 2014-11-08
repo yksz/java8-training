@@ -1,6 +1,6 @@
 package ch03.ex04;
 
-public class Main {
+public class Answer {
 
     // java.nio.file.DirectoryStream.Filter
     // javax.xml.stream.EventFilter
