@@ -19,7 +19,7 @@ public class LambdaUtilsTest {
 
     @Test(expected=NullPointerException.class)
     public void testMapItemsIsNull() {
-        LambdaUtils.map(null, (o) -> o);
+        LambdaUtils.map(null, o -> o);
     }
 
     @Test(expected=NullPointerException.class)

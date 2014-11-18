@@ -1,6 +1,6 @@
 package ch03.ex09;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.util.Comparator;
 

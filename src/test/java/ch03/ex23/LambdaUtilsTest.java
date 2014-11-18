@@ -1,6 +1,6 @@
 package ch03.ex23;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.concurrent.ExecutionException;
 
@@ -18,7 +18,7 @@ public class LambdaUtilsTest {
 
     @Test(expected=NullPointerException.class)
     public void testMapPairIsNull() {
-        LambdaUtils.map(null, (o) -> o);
+        LambdaUtils.map(null, o -> o);
     }
 
     @Test(expected=NullPointerException.class)

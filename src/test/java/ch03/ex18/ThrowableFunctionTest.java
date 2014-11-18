@@ -20,7 +20,7 @@ public class ThrowableFunctionTest {
     @Test
     public void testUncheckedThrowException() {
         Exception e = new Exception();
-        Function<Object, Object> f = ThrowableFunction.unchecked((o) -> { throw e; });
+        Function<Object, Object> f = ThrowableFunction.unchecked(o -> { throw e; });
         try {
             f.apply(null);
             fail();
