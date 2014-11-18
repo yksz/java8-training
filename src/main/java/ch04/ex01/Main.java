@@ -15,7 +15,7 @@ public class Main extends Application {
         Label label = new Label("Hello, FX");
         label.setFont(new Font(100));
         TextField textField = new TextField(message);
-        textField.setOnAction(event -> label.setText(textField.getText()));
+        textField.textProperty().addListener(prop -> label.setText(textField.getText()));
         VBox root = new VBox();
         root.getChildren().addAll(textField, label);
         stage.setScene(new Scene(root));
