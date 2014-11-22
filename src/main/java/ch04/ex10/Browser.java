@@ -34,8 +34,7 @@ public class Browser extends Application {
             }
         });
 
-        VBox root = new VBox();
-        root.getChildren().addAll(urlBar, backButton, webView);
+        VBox root = new VBox(urlBar, backButton, webView);
         stage.setScene(new Scene(root));
         stage.show();
     }

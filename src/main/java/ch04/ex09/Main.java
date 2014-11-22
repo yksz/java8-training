@@ -66,8 +66,7 @@ public class Main extends Application {
         pathTransition.setCycleCount(PathTransition.INDEFINITE);
         pathTransition.play();
 
-        Group root = new Group();
-        root.getChildren().addAll(ellipticOrbit, planet, star);
+        Group root = new Group(ellipticOrbit, planet, star);
         stage.setScene(new Scene(root, 640, 480, Color.BLACK));
         stage.show();
     }

@@ -16,8 +16,7 @@ public class Main extends Application {
         label.setFont(new Font(100));
         TextField textField = new TextField(message);
         textField.textProperty().addListener(prop -> label.setText(textField.getText()));
-        VBox root = new VBox();
-        root.getChildren().addAll(textField, label);
+        VBox root = new VBox(textField, label);
         stage.setScene(new Scene(root));
         stage.setTitle("Hello");
         stage.show();
