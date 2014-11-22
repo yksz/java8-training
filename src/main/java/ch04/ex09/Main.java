@@ -1,5 +1,6 @@
 package ch04.ex09;
 
+import javafx.animation.Animation;
 import javafx.animation.PathTransition;
 import javafx.application.Application;
 import javafx.scene.Group;
@@ -63,7 +64,7 @@ public class Main extends Application {
         pathTransition.setDuration(Duration.millis(10000));
         pathTransition.setNode(planet);
         pathTransition.setPath(ellipticOrbit);
-        pathTransition.setCycleCount(PathTransition.INDEFINITE);
+        pathTransition.setCycleCount(Animation.INDEFINITE);
         pathTransition.play();
 
         Group root = new Group(ellipticOrbit, planet, star);
