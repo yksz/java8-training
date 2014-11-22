@@ -8,7 +8,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class Hello extends Application {
 
     public void start(Stage stage) {
         String message = "Hello, FX";
