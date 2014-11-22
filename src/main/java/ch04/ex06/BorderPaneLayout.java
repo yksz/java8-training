@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class BorderPaneLayout extends Application {
 
     public void start(Stage stage) {
         BorderPane pane = new BorderPane();
