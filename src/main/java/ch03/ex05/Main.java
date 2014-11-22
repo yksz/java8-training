@@ -39,8 +39,7 @@ public class Main extends Application {
                 return colorAtXY;
         });
 
-        Pane root = new Pane();
-        root.getChildren().add(new ImageView(out));
+        Pane root = new Pane(new ImageView(out));
         stage.setScene(new Scene(root));
         stage.show();
     }

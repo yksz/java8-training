@@ -22,8 +22,7 @@ public class Main extends Application {
         Image out = LatentImage.from(in)
                 .transform(Color::grayscale).detectEdge();
 
-        HBox root = new HBox();
-        root.getChildren().addAll(new ImageView(in), new ImageView(out));
+        HBox root = new HBox(new ImageView(in), new ImageView(out));
         stage.setScene(new Scene(root));
         stage.show();
     }

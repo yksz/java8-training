@@ -22,8 +22,7 @@ public class Main extends Application {
                 .transform((x, y, reader) -> reader.getColor((int) in.getWidth() - 1 - x, y).grayscale())
                 .toImage();
 
-        HBox root = new HBox();
-        root.getChildren().addAll(new ImageView(in), new ImageView(out));
+        HBox root = new HBox(new ImageView(in), new ImageView(out));
         stage.setScene(new Scene(root));
         stage.show();
     }

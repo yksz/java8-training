@@ -35,8 +35,7 @@ public class Main extends Application {
         ColorTransformer sash = ColorTransformer.sash(in, 10, Color.GRAY);
         Image out = transform(in, ColorTransformer.compose(sash, brighter));
 
-        HBox root = new HBox();
-        root.getChildren().addAll(new ImageView(in), new ImageView(out));
+        HBox root = new HBox(new ImageView(in), new ImageView(out));
         stage.setScene(new Scene(root));
         stage.show();
     }

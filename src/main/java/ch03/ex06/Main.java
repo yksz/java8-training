@@ -36,8 +36,7 @@ public class Main extends Application {
                 (c, factor) -> c.deriveColor(0, 1, factor, 1),
                 1.2);
 
-        HBox root = new HBox();
-        root.getChildren().addAll(new ImageView(image), new ImageView(brightenedImage));
+        HBox root = new HBox(new ImageView(image), new ImageView(brightenedImage));
         stage.setScene(new Scene(root));
         stage.show();
     }

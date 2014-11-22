@@ -23,8 +23,7 @@ public class Main extends Application {
                 .transform(ColorTransformer.convert(Color::grayscale)).transform(Color::brighter)
                 .toImage();
 
-        HBox root = new HBox();
-        root.getChildren().addAll(new ImageView(in), new ImageView(out));
+        HBox root = new HBox(new ImageView(in), new ImageView(out));
         stage.setScene(new Scene(root));
         stage.show();
     }

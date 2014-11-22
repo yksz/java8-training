@@ -33,8 +33,7 @@ public class Main extends Application {
         Image in = new Image(getResource("ch03/lena.jpg").toString());
         Image out = transform(in, ColorTransformer.sash(in, 10, Color.GRAY));
 
-        Pane root = new Pane();
-        root.getChildren().add(new ImageView(out));
+        Pane root = new Pane(new ImageView(out));
         stage.setScene(new Scene(root));
         stage.show();
     }
