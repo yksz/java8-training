@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 public class Main {
 
     static Stream<Character> characterStream(String s) {
-        return IntStream.range(0, s.length()).boxed().map(s::charAt);
+        return IntStream.range(0, s.length()).mapToObj(s::charAt);
     }
 
     public static void main(String[] args) {
