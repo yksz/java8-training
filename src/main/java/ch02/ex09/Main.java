@@ -4,20 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Stream;
 
 public class Main {
 
     static <T> ArrayList<T> inject1(Stream<ArrayList<T>> stream) {
-        Optional<ArrayList<T>> opt = stream.reduce((acc, val) -> {
-            acc.addAll(val);
-            return acc;
-        });
-        if (opt.isPresent())
-            return opt.get();
-        else
-            return new ArrayList<>();
+        return stream.reduce((acc, val) -> {
+            ArrayList<T> list = new ArrayList<>(acc);
+            list.addAll(val);
+            return list;
+        }).orElse(new ArrayList<>());
     }
 
     static <T> ArrayList<T> inject2(Stream<ArrayList<T>> stream) {
