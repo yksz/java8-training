@@ -6,28 +6,39 @@ import javafx.beans.property.StringProperty;
 public class Greeting {
 
     private String text = "";
-
-    public Greeting(String text) {
-        this.text = text;
-    }
+    private StringProperty textProperty;
 
     public final StringProperty textProperty() {
-        return new SimpleStringProperty(text);
+        if (textProperty == null) {
+            textProperty = new SimpleStringProperty(text);
+            text = null;
+        }
+        return textProperty;
     }
 
     public final String getText() {
-        return text;
+        if (textProperty == null)
+            return text;
+        else
+            return textProperty.get();
     }
 
     public final void setText(String text) {
-        this.text = text;
+        if (textProperty == null)
+            this.text = text;
+        else
+            textProperty.set(text);
     }
 
     public static void main(String[] args) {
-        Greeting greeting = new Greeting("hello");
-        StringProperty stringProperty = greeting.textProperty();
-        assert stringProperty.getValue().equals("hello");
+        Greeting greeting = new Greeting();
+        greeting.setText("hello");
         assert greeting.getText().equals("hello");
+        assert greeting.textProperty == null;
+
+        greeting.textProperty().set("hi");
+        assert greeting.getText().equals("hi");
+        assert greeting.textProperty != null;
     }
 
 }
