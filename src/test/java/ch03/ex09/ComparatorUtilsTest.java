@@ -1,6 +1,6 @@
 package ch03.ex09;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Comparator;
 
@@ -50,7 +50,7 @@ public class ComparatorUtilsTest {
     @Test(expected=NullPointerException.class)
     public void testLexicographicComparatorNull() {
         // when:
-        Comparator<Object> comp = ComparatorUtils.lexicographicComparator(null);
+        Comparator<Object> comp = ComparatorUtils.lexicographicComparator((String[]) null);
 
         // then:
         comp.compare("", "");
