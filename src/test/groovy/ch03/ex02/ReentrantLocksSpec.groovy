@@ -12,7 +12,7 @@ class ReentrantLocksSpec extends Specification {
         lock = new ReentrantLock();
     }
 
-    def "test withLock"() {
+    def "test 'withLock'"() {
         setup:
         def wasLocked = false
 
@@ -26,7 +26,7 @@ class ReentrantLocksSpec extends Specification {
         lock.isLocked() == false
     }
 
-    def "test withLock when a exception is thrown"() {
+    def "test 'withLock' when a exception is thrown"() {
         setup:
         def wasLocked = false
 

@@ -13,7 +13,7 @@ class LoggersSpec extends Specification {
         logger = Logger.getLogger('test')
     }
 
-    def "test logIf when trigger is true"() {
+    def "test 'logIf' when trigger is true"() {
         setup:
         def msg = 'eval'
         def out = []
@@ -25,7 +25,7 @@ class LoggersSpec extends Specification {
         out == [msg]
     }
 
-    def "test logIf when trigger is false"() {
+    def "test 'logIf' when trigger is false"() {
         setup:
         def msg = 'eval'
         def out = []

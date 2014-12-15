@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class AssertionSpec extends Specification {
 
-    def "test asserts when a condition is true"() {
+    def "test 'asserts' when a condition is true"() {
         when:
         Assertion.setEnabled(true)
 
@@ -16,7 +16,7 @@ class AssertionSpec extends Specification {
         notThrown AssertionError
     }
 
-    def "test asserts when a condition is false"() {
+    def "test 'asserts' when a condition is false"() {
         when:
         Assertion.setEnabled(true)
 
@@ -29,7 +29,7 @@ class AssertionSpec extends Specification {
         error.message == 'a is null'
     }
 
-    def "test asserts when the assertion is disabled"() {
+    def "test 'asserts' when the assertion is disabled"() {
         when:
         Assertion.setEnabled(false)
 

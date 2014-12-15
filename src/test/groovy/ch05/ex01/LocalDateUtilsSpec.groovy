@@ -8,7 +8,7 @@ import spock.lang.Unroll
 class LocalDateUtilsSpec extends Specification {
 
     @Unroll
-    def "test getProgrammersDay of #year"() {
+    def "test 'getProgrammersDay' in #year"() {
         expect:
         LocalDateUtils.getProgrammersDay(year) == LocalDate.of(y, m, d)
 
