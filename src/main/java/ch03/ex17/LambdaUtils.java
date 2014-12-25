@@ -14,7 +14,7 @@ public class LambdaUtils {
         }).start();
         new Thread(() -> {
             try {
-                first.run();
+                second.run();
             } catch (Throwable t) {
                 handler.accept(t);
             }
