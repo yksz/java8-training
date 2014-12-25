@@ -1,6 +1,6 @@
 package ch03.ex07;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 import java.util.Arrays;
 import java.util.Set;
@@ -19,7 +19,7 @@ public class ComparatorUtilsTest {
         Arrays.sort(actual, ComparatorUtils.comparatorGenerator(null));
 
         // then:
-        String[] expected = new String[] { " grape", "Apple", "apple", "orange" };
+        String[] expected = new String[] { " grape", "apple", "Apple", "orange" };
         assertArrayEquals(expected, actual);
     }
 
@@ -39,60 +39,60 @@ public class ComparatorUtilsTest {
     }
 
     @Test
-    public void testComparatorGeneratorCaseInsensitive() {
+    public void testComparatorGeneratorCaseSensitive() {
         // setup:
         String[] actual = new String[] { "apple", "orange", "Apple", " grape" };
 
         // when:
         Set<Condition> condition = new TreeSet<>();
-        condition.add(Condition.CASE_INSENSITIVE);
+        condition.add(Condition.CASE_SENSITIVE);
         Arrays.sort(actual, ComparatorUtils.comparatorGenerator(condition));
 
         // then:
-        String[] expected = new String[] { " grape", "apple", "Apple", "orange" };
+        String[] expected = new String[] { " grape", "Apple", "apple", "orange" };
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void testComparatorGeneratorWhitespaceExclusion() {
+    public void testComparatorGeneratorSpaceSensitive() {
         // setup:
         String[] actual = new String[] { "apple", "orange", "Apple", " grape" };
 
         // when:
         Set<Condition> condition = new TreeSet<>();
-        condition.add(Condition.WHITESPACE_EXCLUSION);
+        condition.add(Condition.SPACE_SENSTIVE);
         Arrays.sort(actual, ComparatorUtils.comparatorGenerator(condition));
 
         // then:
-        String[] expected = new String[] { "Apple", "apple", " grape", "orange" };
+        String[] expected = new String[] { "apple", "Apple", " grape", "orange" };
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void testComparatorGeneratorReverseOrderAndCaseInsensitive() {
+    public void testComparatorGeneratorReverseOrderAndCaseSensitive() {
         // setup:
         String[] actual = new String[] { "Apple", "orange", "apple", " grape" };
 
         // when:
         Set<Condition> condition = new TreeSet<>();
         condition.add(Condition.REVERSE_ORDER);
-        condition.add(Condition.CASE_INSENSITIVE);
+        condition.add(Condition.CASE_SENSITIVE);
         Arrays.sort(actual, ComparatorUtils.comparatorGenerator(condition));
 
         // then:
-        String[] expected = new String[] { "orange", "Apple", "apple", " grape" };
+        String[] expected = new String[] { "orange", "apple", "Apple", " grape" };
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void testComparatorGeneratorReverseOrderAndWhitespaceExclusion() {
+    public void testComparatorGeneratorReverseOrderAndSpaceSensitive() {
         // setup:
         String[] actual = new String[] { "apple", "orange", "Apple", " grape" };
 
         // when:
         Set<Condition> condition = new TreeSet<>();
         condition.add(Condition.REVERSE_ORDER);
-        condition.add(Condition.WHITESPACE_EXCLUSION);
+        condition.add(Condition.SPACE_SENSTIVE);
         Arrays.sort(actual, ComparatorUtils.comparatorGenerator(condition));
 
         // then:
@@ -101,18 +101,18 @@ public class ComparatorUtilsTest {
     }
 
     @Test
-    public void testComparatorGeneratorCaseInsensitiveAndWhitespaceExclusion() {
+    public void testComparatorGeneratorCaseSensitiveAndSpaceSensitive() {
         // setup:
         String[] actual = new String[] { "apple", "orange", "Apple", " grape" };
 
         // when:
         Set<Condition> condition = new TreeSet<>();
-        condition.add(Condition.CASE_INSENSITIVE);
-        condition.add(Condition.WHITESPACE_EXCLUSION);
+        condition.add(Condition.CASE_SENSITIVE);
+        condition.add(Condition.SPACE_SENSTIVE);
         Arrays.sort(actual, ComparatorUtils.comparatorGenerator(condition));
 
         // then:
-        String[] expected = new String[] { "apple", "Apple", " grape", "orange" };
+        String[] expected = new String[] { "Apple", "apple", " grape", "orange" };
         assertArrayEquals(expected, actual);
     }
 

@@ -11,10 +11,10 @@ public class ComparatorUtils {
             condition = Collections.emptySet();
         }
         boolean isReverseOrder = condition.contains(Condition.REVERSE_ORDER);
-        boolean isCaseInsensitive = condition.contains(Condition.CASE_INSENSITIVE);
-        boolean isWhitespaceExclusion = condition.contains(Condition.WHITESPACE_EXCLUSION);
+        boolean isCaseSensitive = condition.contains(Condition.CASE_SENSITIVE);
+        boolean isSpaceSensitive = condition.contains(Condition.SPACE_SENSTIVE);
         return (str1, str2) -> {
-            if (isWhitespaceExclusion) {
+            if (isSpaceSensitive) {
                 str1 = str1.replaceAll("\\s", "");
                 str2 = str2.replaceAll("\\s", "");
             }
@@ -22,10 +22,10 @@ public class ComparatorUtils {
             if (isReverseOrder) {
                 order = -1;
             }
-            if (isCaseInsensitive) {
-                return str1.compareToIgnoreCase(str2) * order;
-            } else {
+            if (isCaseSensitive) {
                 return str1.compareTo(str2) * order;
+            } else {
+                return str1.compareToIgnoreCase(str2) * order;
             }
         };
     }
