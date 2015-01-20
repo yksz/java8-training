@@ -1,0 +1,1 @@
+This class is fully interoperable with Hashtable in programs that rely on its thread safety but not on its synchronization details.

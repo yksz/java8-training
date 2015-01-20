@@ -1,0 +1,1 @@
+This class obeys the same functional specification as Hashtable, and includes versions of methods corresponding to each method of Hashtable.
