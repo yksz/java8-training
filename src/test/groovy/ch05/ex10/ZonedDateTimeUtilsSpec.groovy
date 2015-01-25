@@ -35,19 +35,19 @@ class ZonedDateTimeUtilsSpec extends Specification {
         ZonedDateTimeUtils.calculateArrivalTime(null, duration, zoneId)
 
         then:
-        thrown(NullPointerException)
+        thrown NullPointerException
 
         when:
         ZonedDateTimeUtils.calculateArrivalTime(zonedDateTime, null, zoneId)
 
         then:
-        thrown(NullPointerException)
+        thrown NullPointerException
 
         when:
         ZonedDateTimeUtils.calculateArrivalTime(zonedDateTime, duration, null)
 
         then:
-        thrown(NullPointerException)
+        thrown NullPointerException
     }
 
 }

@@ -33,13 +33,13 @@ class ZonedDateTimeUtilsSpec extends Specification {
         ZonedDateTimeUtils.calculateDuration(null, zonedDateTime)
 
         then:
-        thrown(NullPointerException)
+        thrown NullPointerException
 
         when:
         ZonedDateTimeUtils.calculateDuration(zonedDateTime, null)
 
         then:
-        thrown(NullPointerException)
+        thrown NullPointerException
     }
 
 }

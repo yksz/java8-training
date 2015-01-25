@@ -16,19 +16,19 @@ class TimeIntervalSpec extends Specification {
         new TimeInterval(null, time(10, 0), time(11, 0))
 
         then:
-        thrown(NullPointerException)
+        thrown NullPointerException
 
         when:
         new TimeInterval(LocalDate.now(), null, time(11, 0))
 
         then:
-        thrown(NullPointerException)
+        thrown NullPointerException
 
         when:
         new TimeInterval(LocalDate.now(), time(10, 0), null)
 
         then:
-        thrown(NullPointerException)
+        thrown NullPointerException
     }
 
     def "test 'constructor' when beginingTime equals endingTime"() {
@@ -36,7 +36,7 @@ class TimeIntervalSpec extends Specification {
         new TimeInterval(LocalDate.now(), time(10, 0), time(10, 0))
 
         then:
-        thrown(IllegalArgumentException)
+        thrown IllegalArgumentException
     }
 
     def "test 'constructor' when beginingTime is after endingTime"() {
@@ -44,7 +44,7 @@ class TimeIntervalSpec extends Specification {
         new TimeInterval(LocalDate.now(), time(10, 0), time(9, 0))
 
         then:
-        thrown(IllegalArgumentException)
+        thrown IllegalArgumentException
     }
 
     @Unroll
