@@ -55,7 +55,7 @@ public class Reader {
     }
 
     public static void main(String[] args) throws Exception {
-        File dir = new File(getResource("ch06").toURI());
+        File dir = new File(getResource("ch06/text").toURI());
         Reader reader = new Reader();
         reader.read(dir.listFiles(file -> file.getName().matches(".+txt$")));
         reader.map.forEach((key, value) -> {
