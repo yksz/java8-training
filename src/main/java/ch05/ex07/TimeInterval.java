@@ -7,8 +7,8 @@ import java.util.Objects;
 
 public class TimeInterval {
 
-    private LocalDateTime beginingDateTime;
-    private LocalDateTime endingDateTime;
+    private final LocalDateTime beginingDateTime;
+    private final LocalDateTime endingDateTime;
 
     public TimeInterval(LocalDate date, LocalTime beginingTime, LocalTime endingTime) {
         Objects.requireNonNull(date, "date must not be null");
