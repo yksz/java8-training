@@ -7,7 +7,7 @@ public class DateCountdown {
 
     public static void main(String[] args) {
         if (args.length < 3) {
-            System.out.println("usage: <year> <month> <day of month>");
+            System.out.println("usage: java DateCountdown <year> <month> <day of month>");
             System.exit(1);
         }
         int year = Integer.valueOf(args[0]);
