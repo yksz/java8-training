@@ -12,18 +12,18 @@ public class ArraysSortTest {
                 .limit(size).toArray();
     }
 
-    static long measureProcessingTime(Runnable f) {
-        long begin = System.nanoTime();
+    static long withClock(Runnable f) {
+        long start = System.nanoTime();
         f.run();
-        long end = System.nanoTime();
-        return end - begin;
+        long stop = System.nanoTime();
+        return stop - start;
     }
 
     static boolean isParallelSortFaster(int[] array) {
         int[] a1 = array;
         int[] a2 = array.clone();
-        long t1 = measureProcessingTime(() -> Arrays.sort(a1));
-        long t2 = measureProcessingTime(() -> Arrays.parallelSort(a2));
+        long t1 = withClock(() -> Arrays.sort(a1));
+        long t2 = withClock(() -> Arrays.parallelSort(a2));
         return t2 < t1;
     }
 

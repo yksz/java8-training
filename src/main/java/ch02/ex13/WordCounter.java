@@ -11,7 +11,7 @@ import java.nio.file.Paths;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class Main {
+public class WordCounter {
 
     static URL getResource(String resource) {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
@@ -19,7 +19,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws Exception {
-        URI uri = getResource("ch02/alice.txt").toURI();
+        URI uri = getResource("alice.txt").toURI();
         String contents = new String(Files.readAllBytes(Paths.get(uri)), StandardCharsets.UTF_8);
         String[] wordArray = contents.split("[\\P{L}]+");
         Stream<String> words = Stream.of(wordArray).parallel();

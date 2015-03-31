@@ -16,22 +16,22 @@ public class PerformanceTest {
     }
 
     public static void main(String[] args) throws Exception {
-        URI uri = getResource("ch02/alice.txt").toURI();
+        URI uri = getResource("alice.txt").toURI();
         String contents = new String(Files.readAllBytes(Paths.get(uri)), StandardCharsets.UTF_8);
         List<String> words = Arrays.asList(contents.split("[\\P{L}]+"));
 
         {
-            long begin = System.nanoTime();
+            long start = System.nanoTime();
             long count = words.stream().filter(w -> w.length() > 12).count();
-            long end = System.nanoTime();
-            System.out.println("stream: count=" + count + ", time=" + (end - begin) + "[ns]");
+            long stop = System.nanoTime();
+            System.out.println("stream: count=" + count + ", time=" + (stop - start) + "[ns]");
         }
 
         {
-            long begin = System.nanoTime();
+            long start = System.nanoTime();
             long count = words.parallelStream().filter(w -> w.length() > 12) .count();
-            long end = System.nanoTime();
-            System.out.println("parallelStream: count=" + count + ", time=" + (end - begin) + "[ns]");
+            long stop = System.nanoTime();
+            System.out.println("parallelStream: count=" + count + ", time=" + (stop - start) + "[ns]");
 
         }
     }

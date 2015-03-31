@@ -8,7 +8,7 @@ public class Answer {
     // <U> CompletableFuture<U> thenCompose(Function<? super T,? extends CompletionStage<U>> fn)
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-        long begin = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
         CompletableFuture<String> cf = CompletableFuture.supplyAsync(() -> {
             return "Hello ";
         }).thenCompose((s) -> CompletableFuture.supplyAsync(() -> {
@@ -19,8 +19,8 @@ public class Answer {
             return s + "World!";
         }));
         System.out.println(cf.get());
-        long end = System.currentTimeMillis();
-        System.out.println((end - begin) / 1000.0 + " [sec]");
+        long stop = System.currentTimeMillis();
+        System.out.println((stop - start) / 1000.0 + " [sec]");
     }
 
 }
