@@ -11,17 +11,7 @@ import java.util.stream.Stream;
 
 public class Finder {
 
-    public static void main(String[] args) throws IOException {
-        if (args.length < 2) {
-            System.out.println("usage: java Finder <directory> <words>");
-            System.exit(1);
-        }
-        String root = args[0];
-        List<String> words = new ArrayList<>();
-        for (int i = 1; i < args.length; i++) {
-            words.add(args[i]);
-        }
-
+    static void findAndPrint(String root, List<String> words) throws IOException {
         try (Stream<Path> entries = Files.walk(Paths.get(root))) {
             Stream<Path> files = entries.filter(path -> path.toFile().isFile());
             files.forEach(path -> {
@@ -39,6 +29,20 @@ public class Finder {
                 }
             });
         }
+    }
+
+    public static void main(String[] args) throws IOException {
+        if (args.length < 2) {
+            System.out.println("usage: java Finder <directory> <words>");
+            System.exit(1);
+        }
+        String root = args[0];
+        List<String> words = new ArrayList<>();
+        for (int i = 1; i < args.length; i++) {
+            words.add(args[i]);
+        }
+
+        findAndPrint(root, words);
     }
 
 }
