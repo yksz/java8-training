@@ -3,7 +3,7 @@ package ch02.ex07;
 import java.util.Spliterator;
 import java.util.stream.Stream;
 
-public class Main {
+public class FiniteStreamChecker {
 
     // isFinite は終端操作であるため実用的ではない
     static <T> boolean isFinite(Stream<T> stream) {

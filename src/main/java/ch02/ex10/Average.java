@@ -3,7 +3,7 @@ package ch02.ex10;
 import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
 
-public class Main {
+public class Average {
 
     static double average(Stream<Double> stream) {
         double[] result = stream

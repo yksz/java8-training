@@ -3,7 +3,7 @@ package ch02.ex05;
 import java.util.Arrays;
 import java.util.stream.Stream;
 
-public class Main {
+public class RandomStream {
 
     static Stream<Long> randomStream(long seed) {
         long a = 25214903917L;

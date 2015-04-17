@@ -7,7 +7,7 @@ import java.util.Spliterators;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public class Main {
+public class Zip {
 
     static <T> Stream<T> zip(Stream<T> first, Stream<T> second) {
         Iterator<T> iterator = new ZipIterator<>(first.iterator(), second.iterator());

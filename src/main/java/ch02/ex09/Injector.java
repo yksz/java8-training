@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Main {
+public class Injector {
 
     static <T> ArrayList<T> inject1(Stream<ArrayList<T>> stream) {
         return stream.reduce((acc, val) -> {

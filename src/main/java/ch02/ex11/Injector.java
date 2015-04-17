@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Main {
+public class Injector {
 
     static <T> ArrayList<T> inject(Stream<T> stream, int size) {
         ArrayList<T> list = new ArrayList<>(size);
