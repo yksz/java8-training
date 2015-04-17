@@ -2,7 +2,7 @@ package ch05.ex02;
 
 import java.time.LocalDate;
 
-public class Main {
+public class LocalDateAdder {
 
     public static void main(String[] args) {
         LocalDate date = LocalDate.of(2000, 2, 29);

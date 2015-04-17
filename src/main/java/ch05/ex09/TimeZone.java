@@ -3,7 +3,7 @@ package ch05.ex09;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
-public class Main {
+public class TimeZone {
 
     public static void main(String[] args) {
         LocalDateTime now = LocalDateTime.now();
