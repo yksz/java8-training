@@ -3,7 +3,7 @@ package ch06.ex04;
 import java.util.concurrent.atomic.LongAccumulator;
 import java.util.stream.LongStream;
 
-public class Main {
+public class Accumulator {
 
     public static void main(String[] args) {
         LongAccumulator max = new LongAccumulator(Long::max, Long.MIN_VALUE);

@@ -4,7 +4,7 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.LongStream;
 
-public class Main {
+public class MaxKeyFinder {
 
     public static void main(String[] args) {
         ConcurrentHashMap<String, Long> map = new ConcurrentHashMap<>();
