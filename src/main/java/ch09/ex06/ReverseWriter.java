@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
 
-public class Main {
+public class ReverseWriter {
 
     public static void main(String[] args) throws IOException {
         List<String> lines = Files.readAllLines(Paths.get("/usr/share/dict/words"));

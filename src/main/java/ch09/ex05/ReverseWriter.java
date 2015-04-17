@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class Main {
+public class ReverseWriter {
 
     static byte[] reverse(byte[] src) {
         byte[] dst = new byte[src.length];
