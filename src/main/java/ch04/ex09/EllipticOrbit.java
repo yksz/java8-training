@@ -15,7 +15,7 @@ import javafx.scene.shape.Path;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class Main extends Application {
+public class EllipticOrbit extends Application {
 
     private Circle makeStar() {
         Circle star = new Circle();

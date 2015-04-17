@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class BindingCircle extends Application {
 
     public void start(Stage stage) {
         Group root = new Group();
