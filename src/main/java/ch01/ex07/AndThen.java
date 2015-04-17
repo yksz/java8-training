@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Main {
+public class AndThen {
 
     public static Runnable andThen(Runnable r1, Runnable r2) {
         return () -> {

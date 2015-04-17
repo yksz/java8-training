@@ -5,7 +5,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
 
-public class Main {
+public class FileSort {
 
     static URL getResource(String resource) {
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();

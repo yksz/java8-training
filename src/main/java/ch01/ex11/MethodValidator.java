@@ -1,6 +1,6 @@
 package ch01.ex11;
 
-public class Main {
+public class MethodValidator {
 
     public static void main(String[] args) {
         Impl1 impl1 = new Impl1();
