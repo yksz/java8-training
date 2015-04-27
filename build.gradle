@@ -1,7 +1,7 @@
 apply plugin: 'java'
 apply plugin: 'groovy'
-apply plugin: 'eclipse'
 apply plugin: 'application'
+apply plugin: 'eclipse'
 
 repositories {
     mavenCentral()
@@ -9,7 +9,7 @@ repositories {
 
 dependencies {
     compile 'org.jsoup:jsoup:1.8.1'
-    
+
     testCompile 'junit:junit:4.+'
     // mandatory dependencies for using Spock
     testCompile 'org.codehaus.groovy:groovy-all:2.3.7'
@@ -28,10 +28,13 @@ compileJava {
 run {
     enableAssertions = true
 
-    // usage: gradle run -Pmain="<main class>" -Pargs="<args>"
     if (project.hasProperty('main'))
-        main = "${project.main}"
+        main = project.main
     if (project.hasProperty('args'))
-        args = project.args.split(/\s+/) as List
+        args = project.args.tokenize()
     classpath = sourceSets.main.runtimeClasspath
+}
+
+task usage() << {
+    println 'gradle run -Pmain="<main class>" -Pargs="<args>"'
 }
