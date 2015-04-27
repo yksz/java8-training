@@ -12,11 +12,11 @@ public class Grep {
     static void copy(InputStream in, OutputStream out) throws IOException {
         try (BufferedInputStream bin = new BufferedInputStream(in);
                 BufferedOutputStream bout = new BufferedOutputStream(out)) {
-            int len;
             byte[] buf = new byte[1024];
+            int len;
             while ((len = bin.read(buf)) != -1)
-                out.write(buf, 0, len);
-            out.flush();
+                bout.write(buf, 0, len);
+            bout.flush();
         }
     }
 
