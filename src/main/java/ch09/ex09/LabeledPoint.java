@@ -26,9 +26,9 @@ public class LabeledPoint {
             return false;
         }
         LabeledPoint other = (LabeledPoint) obj;
-        return Objects.equals(label, other.label) &&
-        Objects.equals(x, other.x) &&
-        Objects.equals(y, other.y);
+        return Objects.equals(label, other.label)
+                && x == other.x
+                && y == other.y;
     }
 
     @Override

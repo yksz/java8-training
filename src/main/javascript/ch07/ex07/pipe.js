@@ -21,8 +21,8 @@ function plug(inputStream, outputStream) {
   new java.lang.Thread(function() {
     var input = new java.io.BufferedInputStream(inputStream);
     var output = new java.io.BufferedOutputStream(outputStream);
-    var len;
     var buf = new byteArray(1024);
+    var len;
     try {
       while ((len = input.read(buf)) != -1)
         output.write(buf, 0, len);
